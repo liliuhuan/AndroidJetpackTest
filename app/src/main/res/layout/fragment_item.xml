@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="dummyItem"
+            type="com.app.suit.customviewp.databinding.dummy.DummyContent.DummyItem" />
+        <variable
+            name="adapter"
+            type="com.app.suit.customviewp.databinding.MyItemRecyclerViewAdapter" />
+    </data>
+
+    <LinearLayout
+        android:id="@+id/item"
+        android:onClick="@{()->adapter.onItemClick(dummyItem)}"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/item_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:text="@{dummyItem.id}"
+            android:textAppearance="?attr/textAppearanceListItem" />
+
+        <TextView
+            android:id="@+id/content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/text_margin"
+            android:text="@{dummyItem.content}"
+            android:textAppearance="?attr/textAppearanceListItem" />
+    </LinearLayout>
+</layout>

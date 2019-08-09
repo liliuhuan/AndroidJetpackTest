@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">AndroidJetpackTest</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="button">button</string>
+    <string name="databinding">to-databinding</string>
+    <string name="lifecycles">to-Lifecycles</string>
+    <string name="liveData">to-LiveData</string>
+    <string name="viewModel">to-ViewModel</string>
+    <string name="room">to-Room</string>
+    <string name="service">to-Service</string>
+</resources>

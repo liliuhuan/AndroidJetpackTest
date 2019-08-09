@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="com.app.suit.customviewp.databinding.User" />
+
+        <import type="com.app.suit.customviewp.databinding.DataBindActivity" />
+
+        <import type="com.app.suit.customviewp.databinding.DataBindActivity.GoodsHandler" />
+
+        <import type="com.app.suit.customviewp.databinding.UserPresenter" />
+
+        <import type="com.app.suit.customviewp.databinding.StringUtil" />
+
+        <import type="android.view.View" />
+
+        <variable
+            name="userInfo"
+            type="com.app.suit.customviewp.databinding.User" />
+
+        <variable
+            name="user"
+            type="User" />
+
+        <variable
+            name="handle"
+            type="GoodsHandler" />
+
+        <variable
+            name="act"
+            type="DataBindActivity" />
+
+        <variable
+            name="presenter"
+            type="UserPresenter" />
+
+        <variable
+            name="resId"
+            type="Integer" />
+
+        <variable
+            name="resR"
+            type="Integer" />
+
+
+        <import type="java.util.List" />
+        <import type="java.util.Map" />
+        <import type="java.util.Set" />
+        <import type="android.util.SparseArray" />
+        <variable
+            name="array"
+            type="String[]" />
+        <variable
+            name="list"
+            type="List&lt;String&gt;" />
+        <variable
+            name="map"
+            type="Map&lt;String, String&gt;" />
+        <variable
+            name="set"
+            type="Set&lt;String&gt;" />
+        <variable
+            name="sparse"
+            type="SparseArray&lt;String&gt;" />
+        <variable
+            name="index"
+            type="int" />
+        <variable
+            name="key"
+            type="String" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".databinding.DataBindActivity">
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{user.name}"
+            app:onClickListener="@{()->handle.changeGoodsName()}" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{()->handle.changeGoodsName()}"
+            android:text="@{userInfo.name+userInfo.address}"
+            app:textColor="@{resId}" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{userInfo.address}"
+            app:onClickListener="@{()->presenter.onUserNameClick(act,userInfo)}" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClickListener="@{()->act.test()}"
+            android:text="test" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:afterTextChanged="@{act.afterTextChanged}" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{StringUtil.toUpperCase(userInfo.name)}" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{StringUtil.toUpperCase(userInfo.name)}"
+            android:visibility="@{userInfo.male ? View.VISIBLE:View.GONE}" />
+
+        <include
+            layout="@layout/test_data_binding"
+            app:userInfo="@{userInfo}" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:loadImage="@{resR}" />
+        <FrameLayout
+            android:id="@+id/fl_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </FrameLayout>
+    </LinearLayout>
+</layout>
