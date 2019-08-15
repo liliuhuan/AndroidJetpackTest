@@ -177,7 +177,6 @@ public class BitmapWorkerTask extends AsyncTask<Void, Void, Bitmap> {
             file.createNewFile();
             fos = new FileOutputStream(file);
             bitmap.compress(Bitmap.CompressFormat.PNG, 100, fos);
-
         } catch (IOException E) {
 
         } finally {

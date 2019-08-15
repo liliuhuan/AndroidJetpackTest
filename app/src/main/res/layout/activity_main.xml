@@ -62,5 +62,11 @@
             android:layout_height="wrap_content"
             android:onClick="@{()->act.toService()}"
             android:text="@string/service" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="@{()->act.toBind()}"
+            android:text="@string/bind" />
     </LinearLayout>
 </layout>

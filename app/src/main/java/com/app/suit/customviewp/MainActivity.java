@@ -7,6 +7,7 @@ import android.util.Log;
 
 import androidx.databinding.DataBindingUtil;
 
+import com.app.suit.customviewp.annotation.BindActivity;
 import com.app.suit.customviewp.databinding.ActivityMainBinding;
 import com.app.suit.customviewp.databinding.DataBindActivity;
 import com.app.suit.customviewp.lifecycles.LifecyclesActivity;
@@ -52,9 +53,14 @@ public class MainActivity extends AppCompatActivity {
         toActivity(RoomActivity.class);
     }
 
+    public void toBind() {
+        toActivity(BindActivity.class);
+    }
+
     private void toActivity(Class<?> A) {
         startActivity(new Intent(this, A));
     }
+
 
     public void toService() {
         Intent intent = new Intent(this, MyService.class);

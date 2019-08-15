@@ -47,27 +47,37 @@
 
 
         <import type="java.util.List" />
+
         <import type="java.util.Map" />
+
         <import type="java.util.Set" />
+
         <import type="android.util.SparseArray" />
+
         <variable
             name="array"
             type="String[]" />
+
         <variable
             name="list"
             type="List&lt;String&gt;" />
+
         <variable
             name="map"
             type="Map&lt;String, String&gt;" />
+
         <variable
             name="set"
             type="Set&lt;String&gt;" />
+
         <variable
             name="sparse"
             type="SparseArray&lt;String&gt;" />
+
         <variable
             name="index"
             type="int" />
+
         <variable
             name="key"
             type="String" />
@@ -129,6 +139,7 @@
             android:layout_height="wrap_content"
             android:visibility="gone"
             app:loadImage="@{resR}" />
+
         <FrameLayout
             android:id="@+id/fl_content"
             android:layout_width="match_parent"

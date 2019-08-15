@@ -30,7 +30,7 @@ import androidx.databinding.Bindable;
  * @author: 李刘欢
  * @date：2019/8/8 16:10
  * @version:1.0.0
- * @description: User
+ * @description: UserBean
  */
 public class User extends BaseObservable {
     //如果是 public 修饰符，则可以直接在成员变量上方加上 @Bindable 注解

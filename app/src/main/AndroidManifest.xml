@@ -9,18 +9,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".room.RoomActivity"/>
+        <activity android:name=".annotation.BindActivity"></activity>
+        <activity android:name=".room.RoomActivity" />
         <activity android:name=".viewmodel.ViewModelActivity" />
+
         <service
             android:name=".service.MyService"
             android:enabled="true"
             android:exported="false"
             android:process=":remote">
             <intent-filter>
+
                 <!-- 为Service组件的intent-filter配置action -->
                 <action android:name="com.app.suit.customviewp.MyService" />
             </intent-filter>
         </service>
+
         <activity android:name=".livedata.LiveDataActivity" />
         <activity android:name=".lifecycles.LifecyclesActivity" />
         <activity android:name=".databinding.DataBindActivity" />
@@ -28,6 +32,7 @@
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
