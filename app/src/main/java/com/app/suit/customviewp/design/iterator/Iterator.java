@@ -28,7 +28,8 @@ package com.app.suit.customviewp.design.iterator;
  * @version:1.0.0
  * @description: Iterator
  */
-public interface Iterator {
+public interface Iterator<T> {
     boolean hasNext();
-    Object next();
+    T next();
+    T remove();
 }

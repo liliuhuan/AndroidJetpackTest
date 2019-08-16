@@ -1,4 +1,4 @@
-package com.app.suit.customviewp.design.builder;
+package com.app.suit.customviewp.design.factory;
 
 /************************************************************
  *
@@ -24,13 +24,9 @@ package com.app.suit.customviewp.design.builder;
  *
  *************************************************************
  * @author: 李刘欢
- * @date：2019/8/5 14:52
+ * @date：2019/8/5 14:32
  * @version:1.0.0
- * @description: Burger  汉堡包
+ * @description: IFactory
  */
-public abstract class Burger implements Item {
-    @Override
-    public Packing packing() {
-        return new Wrapper();
-    }
+public interface IFactory {
 }

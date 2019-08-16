@@ -1,4 +1,4 @@
-package com.app.suit.customviewp.design.factory;
+package com.app.suit.customviewp.design.factory.color;
 
 /************************************************************
  *
@@ -24,13 +24,13 @@ package com.app.suit.customviewp.design.factory;
  *
  *************************************************************
  * @author: 李刘欢
- * @date：2019/8/5 14:23
+ * @date：2019/8/5 14:29
  * @version:1.0.0
- * @description: Square
+ * @description: Red
  */
-public class Square implements Shape {
+public class Red implements Color {
     @Override
-    public void draw() {
-        System.out.println("Inside Square::draw() method.");
+    public void fill() {
+        System.out.println("Inside Red::fill() method.");
     }
 }

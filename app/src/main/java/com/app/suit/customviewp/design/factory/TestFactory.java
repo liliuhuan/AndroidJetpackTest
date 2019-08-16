@@ -1,5 +1,10 @@
 package com.app.suit.customviewp.design.factory;
 
+import com.app.suit.customviewp.design.factory.color.Color;
+import com.app.suit.customviewp.design.factory.color.ColorFactory;
+import com.app.suit.customviewp.design.factory.shape.Shape;
+import com.app.suit.customviewp.design.factory.shape.ShapeFactory;
+
 /************************************************************
  *
  *
@@ -51,27 +56,27 @@ public class TestFactory {
         //调用 Square 的 draw 方法
         shape3.draw();
 
-
-
         //获取颜色工厂
-        AbstractFactory colorFactory = FactoryProducer.getFactory("COLOR");
+        IFactory factory = FactoryProducer.getFactory("COLOR");
+        if (factory instanceof ColorFactory){
+            ColorFactory colorFactory = (ColorFactory) factory;
+            //获取颜色为 Red 的对象
+            Color color1 = colorFactory.getColor(FactoryType.RED);
 
-        //获取颜色为 Red 的对象
-        Color color1 = colorFactory.getColor(FactoryType.RED);
+            //调用 Red 的 fill 方法
+            color1.fill();
 
-        //调用 Red 的 fill 方法
-        color1.fill();
+            //获取颜色为 Green 的对象
+            Color color2 = colorFactory.getColor(FactoryType.GREEN);
 
-        //获取颜色为 Green 的对象
-        Color color2 = colorFactory.getColor(FactoryType.GREEN);
+            //调用 Green 的 fill 方法
+            color2.fill();
 
-        //调用 Green 的 fill 方法
-        color2.fill();
+            //获取颜色为 Blue 的对象
+            Color color3 = colorFactory.getColor(FactoryType.BLUE);
 
-        //获取颜色为 Blue 的对象
-        Color color3 = colorFactory.getColor(FactoryType.BLUE);
-
-        //调用 Blue 的 fill 方法
-        color3.fill();
+            //调用 Blue 的 fill 方法
+            color3.fill();
+        }
     }
 }

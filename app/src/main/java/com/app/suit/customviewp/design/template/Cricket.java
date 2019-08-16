@@ -28,7 +28,7 @@ package com.app.suit.customviewp.design.template;
  * @version:1.0.0
  * @description: Cricket
  */
-public class Cricket extends Game {
+ class Cricket extends Game {
     @Override
     void endPlay() {
         System.out.println("Cricket Game Finished!");

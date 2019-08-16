@@ -28,14 +28,14 @@ package com.app.suit.customviewp.design.strategy;
  * @version:1.0.0
  * @description: Context
  */
-public class Context {
+ class Context {
     Strategy strategy;
 
-    public Context(Strategy strategy) {
+    Context(Strategy strategy) {
         this.strategy = strategy;
     }
 
-    public int executeStrategy(int num1, int num2){
+    int executeStrategy(int num1, int num2){
         return strategy.doOperation(num1, num2);
     }
 }

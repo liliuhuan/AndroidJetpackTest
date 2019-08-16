@@ -1,5 +1,7 @@
 package com.app.suit.customviewp.design.builder;
 
+import com.app.suit.customviewp.design.builder.item.Item;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -31,14 +33,14 @@ import java.util.List;
  * @version:1.0.0
  * @description: Meal
  */
-public class Meal {
+ class Meal {
     private List<Item> items = new ArrayList<Item>();
 
-    public void addItem(Item item){
+     void addItem(Item item){
         items.add(item);
     }
 
-    public float getCost(){
+     float getCost(){
         float cost = 0.0f;
         for (Item item : items) {
             cost += item.price();
@@ -46,7 +48,7 @@ public class Meal {
         return cost;
     }
 
-    public void showItems(){
+    void showItems(){
         for (Item item : items) {
             System.out.print("Item : "+item.name());
             System.out.print(", Packing : "+item.packing().pack());

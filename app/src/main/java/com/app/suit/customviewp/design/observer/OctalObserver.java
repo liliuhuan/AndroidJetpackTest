@@ -29,7 +29,7 @@ package com.app.suit.customviewp.design.observer;
  * @description: OctalObserver
  */
 public class OctalObserver extends Observer {
-    public OctalObserver(Subject subject){
+     OctalObserver(Subject subject){
         this.subject = subject;
         this.subject.attach(this);
     }
@@ -39,4 +39,5 @@ public class OctalObserver extends Observer {
         System.out.println( "Octal String: "
                 + Integer.toOctalString( subject.getState() ) );
     }
+    
 }

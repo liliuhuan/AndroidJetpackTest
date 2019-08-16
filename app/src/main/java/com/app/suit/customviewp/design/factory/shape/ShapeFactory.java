@@ -1,4 +1,6 @@
-package com.app.suit.customviewp.design.factory;
+package com.app.suit.customviewp.design.factory.shape;
+
+import com.app.suit.customviewp.design.factory.FactoryType;
 
 /************************************************************
  *
@@ -24,13 +26,23 @@ package com.app.suit.customviewp.design.factory;
  *
  *************************************************************
  * @author: 李刘欢
- * @date：2019/8/5 14:29
+ * @date：2019/8/5 14:25
  * @version:1.0.0
- * @description: Red
+ * @description: ShapeFactory
  */
-public class Red implements Color {
+public class ShapeFactory implements IShapeFactory{
     @Override
-    public void fill() {
-        System.out.println("Inside Red::fill() method.");
+    public Shape getShape(FactoryType shapeType){
+        if(shapeType == null){
+            return null;
+        }
+        if(shapeType.equals(FactoryType.CIRCLE)){
+            return new Circle();
+        } else if(shapeType.equals(FactoryType.RECTANGLE)){
+            return new Rectangle();
+        } else if(shapeType.equals(FactoryType.SQUARE)){
+            return new Square();
+        }
+        return null;
     }
 }

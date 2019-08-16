@@ -28,7 +28,7 @@ package com.app.suit.customviewp.design.template;
  * @version:1.0.0
  * @description: Football
  */
-public class Football extends Game {
+ class Football extends Game {
 
     @Override
     void endPlay() {

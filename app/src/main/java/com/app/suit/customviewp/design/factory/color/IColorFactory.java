@@ -1,4 +1,8 @@
-package com.app.suit.customviewp.design.factory;
+package com.app.suit.customviewp.design.factory.color;
+
+import com.app.suit.customviewp.design.factory.FactoryType;
+import com.app.suit.customviewp.design.factory.IFactory;
+import com.app.suit.customviewp.design.factory.color.Color;
 
 /************************************************************
  *
@@ -24,13 +28,10 @@ package com.app.suit.customviewp.design.factory;
  *
  *************************************************************
  * @author: 李刘欢
- * @date：2019/8/5 14:24
+ * @date：2019/8/16 14:15
  * @version:1.0.0
- * @description: Circle
+ * @description: IColorFactory
  */
-public class Circle implements Shape {
-    @Override
-    public void draw() {
-        System.out.println("Inside Circle::draw() method.");
-    }
+public interface IColorFactory extends IFactory {
+    Color getColor(FactoryType color);
 }

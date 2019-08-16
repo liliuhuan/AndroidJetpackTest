@@ -30,6 +30,5 @@ package com.app.suit.customviewp.design.singleton;
  */
 public enum SingletonEnum {
     INSTANCE;
-    public void whateverMethod() {
-    }
+    public void whateverMethod() { }
 }

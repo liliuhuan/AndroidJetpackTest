@@ -1,4 +1,6 @@
-package com.app.suit.customviewp.design.factory;
+package com.app.suit.customviewp.design.builder.pack;
+
+import com.app.suit.customviewp.design.builder.pack.Packing;
 
 /************************************************************
  *
@@ -24,10 +26,13 @@ package com.app.suit.customviewp.design.factory;
  *
  *************************************************************
  * @author: 李刘欢
- * @date：2019/8/5 14:29
+ * @date：2019/8/5 14:51
  * @version:1.0.0
- * @description: Color
+ * @description: Wrapper 纸质
  */
-public interface Color {
-    void fill();
+public class Wrapper implements Packing {
+    @Override
+    public String pack() {
+        return "Wrapper";
+    }
 }

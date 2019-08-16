@@ -6,11 +6,13 @@ import android.text.Editable;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.databinding.BindingAdapter;
 import androidx.databinding.DataBindingUtil;
 
 import com.app.suit.customviewp.R;
+import com.app.suit.customviewp.databinding.dummy.DummyContent;
 
 import java.util.Random;
 
@@ -42,7 +44,7 @@ import java.util.Random;
  * @description: DataBindActivity.java  双向绑定数据类
  */
 
-public class DataBindActivity extends AppCompatActivity {
+public class DataBindActivity extends AppCompatActivity implements ItemFragment.OnListFragmentInteractionListener {
     ActivityDataBindBinding binding;
     private User user;
 
@@ -63,6 +65,11 @@ public class DataBindActivity extends AppCompatActivity {
         binding.setResR(R.drawable.ic_launcher_background);
 
         getSupportFragmentManager().beginTransaction().replace(R.id.fl_content,new ItemFragment()).commit();
+    }
+
+    @Override
+    public void onListFragmentInteraction(DummyContent.DummyItem item) {
+        Toast.makeText(this,item.content ,Toast.LENGTH_LONG).show();
     }
 
     public class GoodsHandler {
@@ -88,9 +95,9 @@ public class DataBindActivity extends AppCompatActivity {
         user.setName(s.toString());
     }
 
-    @BindingAdapter("android:text")
+    @BindingAdapter("text")
     public static void setText(Button view, String text) {
-        view.setText(text + "-Button");
+        view.setText(String.format("%s-Button", text));
     }
 
     @BindingAdapter({"loadImage"})

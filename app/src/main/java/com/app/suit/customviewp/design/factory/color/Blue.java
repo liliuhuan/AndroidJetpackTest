@@ -1,9 +1,4 @@
-package com.app.suit.customviewp.design;
-
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.stream.Collectors;
+package com.app.suit.customviewp.design.factory.color;
 
 /************************************************************
  *
@@ -29,14 +24,13 @@ import java.util.stream.Collectors;
  *
  *************************************************************
  * @author: 李刘欢
- * @date：2019/8/5 14:20
+ * @date：2019/8/5 14:31
  * @version:1.0.0
- * @description: Tes
+ * @description: Blue
  */
-public class Tes {
-    private void te(){
-        List list = new ArrayList<String>();
-
-//        LinkedHashMap
+public class Blue implements Color {
+    @Override
+    public void fill() {
+        System.out.println("Inside Blue::fill() method.");
     }
 }

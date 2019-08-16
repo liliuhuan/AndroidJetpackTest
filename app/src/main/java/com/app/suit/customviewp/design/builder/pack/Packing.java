@@ -1,4 +1,4 @@
-package com.app.suit.customviewp.design.factory;
+package com.app.suit.customviewp.design.builder.pack;
 
 /************************************************************
  *
@@ -24,13 +24,10 @@ package com.app.suit.customviewp.design.factory;
  *
  *************************************************************
  * @author: 李刘欢
- * @date：2019/8/5 14:31
+ * @date：2019/8/5 14:50
  * @version:1.0.0
- * @description: Blue
+ * @description: Packing  包装
  */
-public class Blue implements Color {
-    @Override
-    public void fill() {
-        System.out.println("Inside Blue::fill() method.");
-    }
+public interface Packing {
+    String pack();
 }

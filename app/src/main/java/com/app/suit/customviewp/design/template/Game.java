@@ -28,7 +28,7 @@ package com.app.suit.customviewp.design.template;
  * @version:1.0.0
  * @description: Game
  */
-public abstract class Game {
+abstract class Game {
     abstract void initialize();
 
     abstract void startPlay();
@@ -36,7 +36,7 @@ public abstract class Game {
     abstract void endPlay();
 
     //模板
-    public final void play() {
+    final void play() {
 
         //初始化游戏
         initialize();

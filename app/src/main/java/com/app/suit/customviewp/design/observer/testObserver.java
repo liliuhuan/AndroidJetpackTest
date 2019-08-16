@@ -39,5 +39,6 @@ public class testObserver {
         subject.setState(15);
         System.out.println("\n Second state change: 10");
         subject.setState(10);
+
     }
 }

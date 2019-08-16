@@ -1,4 +1,4 @@
-package com.app.suit.customviewp.design.builder;
+package com.app.suit.customviewp.design.factory.shape;
 
 /************************************************************
  *
@@ -24,13 +24,13 @@ package com.app.suit.customviewp.design.builder;
  *
  *************************************************************
  * @author: 李刘欢
- * @date：2019/8/5 14:51
+ * @date：2019/8/5 14:24
  * @version:1.0.0
- * @description: Wrapper 纸质
+ * @description: Circle
  */
-public class Wrapper implements Packing {
+public class Circle implements Shape {
     @Override
-    public String pack() {
-        return "Wrapper";
+    public void draw() {
+        System.out.println("Inside Circle::draw() method.");
     }
 }

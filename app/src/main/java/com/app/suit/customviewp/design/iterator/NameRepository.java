@@ -1,5 +1,9 @@
 package com.app.suit.customviewp.design.iterator;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 /************************************************************
  *
  *
@@ -29,25 +33,41 @@ package com.app.suit.customviewp.design.iterator;
  * @description: NameRepository
  */
 public class NameRepository implements Container {
-    public String names[] = {"Robert" , "John" ,"Julie" , "Lora"};
-    @Override
-    public Iterator getIterator() {
-        return new NameIterator();
+    private List<String> names ;
+
+    public NameRepository(ArrayList names) {
+        this.names = names;
     }
 
-    private class NameIterator implements Iterator {
+    @Override
+    public Iterator<String> getIterator() {
+        return new NameIterator(names);
+    }
+
+    private class NameIterator implements Iterator<String> {
         int index;
-        @Override
-        public boolean hasNext() {
-            return index < names.length;
+        private List<String> asList;
+
+        NameIterator(List<String> asList) {
+            this.asList = asList;
         }
 
         @Override
-        public Object next() {
-            if(this.hasNext()){
-                return names[index++];
+        public boolean hasNext() {
+            if (asList == null || asList.size() == 0) return false;
+            return index < asList.size();
+        }
+
+        @Override
+        public String next() {
+            if (this.hasNext()) {
+                return asList.get(index++);
             }
             return null;
+        }
+        @Override
+        public String remove() {
+            return asList.remove(--index);
         }
     }
 }

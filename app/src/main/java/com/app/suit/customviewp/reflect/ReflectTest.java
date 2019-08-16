@@ -39,17 +39,17 @@ public class ReflectTest {
         /**
          * 类的获取
          */
-      //  getClassDemo();
+        getClassDemo();
         /**
          * 创建对象
          */
-      //  creatDemo();
+        creatDemo();
 
         /**
          *读写对象属性
          */
 
-        //readDemo();
+        readDemo();
 
         /**
          * 反射的简单应用
@@ -58,24 +58,35 @@ public class ReflectTest {
     }
 
     //我们正在使用一个第三方的jar包，包含两个类User和Dog(见下)，而我们现在需求是，要调用一个User实例中dog的happy方法。
-
-
     private static void testDemo() {
         Dog user = new Dog();
         Class<Dog> userClass = Dog.class;
         try {
             Field field = userClass.getDeclaredField("dog");
             field.setAccessible(true);
+            /**
+             * dog  对象
+             */
             Object dog = field.get(user);
+            /**
+             * dog 类文件
+             */
             Class<?> dogClass = dog.getClass();
             Method method = dogClass.getDeclaredMethod("sleep");
             method.setAccessible(true);
+            /**
+             * 反射dog 对象的sleep方法
+             */
             method.invoke(dog);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
+    /**
+     *  方法 用invoke   执行
+     *  属性 用 set 更改属性
+     */
     private static void readDemo() {
         TestDemo user = new TestDemo();
         Class cls = TestDemo.class;
@@ -91,7 +102,7 @@ public class ReflectTest {
             field.set(null, 10);
 
             /**
-             * 成员属性
+             * 共有成员属性
              */
             Field clsField = cls.getField("name");
             //读取成员属性
@@ -103,6 +114,7 @@ public class ReflectTest {
              * 私有成员属性
              */
             Field sexField = cls.getDeclaredField("sex");
+            //如果方法是 private修饰的，当你用反射去访问的时候  setAccessible(true); 之后 才能访问
             sexField.setAccessible(true);
             //读取私有成员属性
             String sex = (String) sexField.get(user);
@@ -172,7 +184,7 @@ public class ReflectTest {
     }
 
     private static void getClassDemo() {
-        Class cls = Bean.class;
+        Class<Bean> aClass1 = Bean.class;
 
         Bean bean = new Bean();
         Class<? extends Bean> aClass = bean.getClass();

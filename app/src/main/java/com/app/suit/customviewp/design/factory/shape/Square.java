@@ -1,7 +1,4 @@
-package com.app.suit.customviewp.design.builder;
-
-
-
+package com.app.suit.customviewp.design.factory.shape;
 
 /************************************************************
  *
@@ -27,13 +24,13 @@ package com.app.suit.customviewp.design.builder;
  *
  *************************************************************
  * @author: 李刘欢
- * @date：2019/8/5 14:53
+ * @date：2019/8/5 14:23
  * @version:1.0.0
- * @description: ColdDrink
+ * @description: Square
  */
-public abstract class ColdDrink implements Item {
+public class Square implements Shape {
     @Override
-    public Packing packing() {
-        return new Bottle();
+    public void draw() {
+        System.out.println("Inside Square::draw() method.");
     }
 }

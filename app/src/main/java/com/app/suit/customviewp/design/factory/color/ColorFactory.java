@@ -1,4 +1,6 @@
-package com.app.suit.customviewp.design.builder;
+package com.app.suit.customviewp.design.factory.color;
+
+import com.app.suit.customviewp.design.factory.FactoryType;
 
 /************************************************************
  *
@@ -24,12 +26,24 @@ package com.app.suit.customviewp.design.builder;
  *
  *************************************************************
  * @author: 李刘欢
- * @date：2019/8/5 14:50
+ * @date：2019/8/5 14:33
  * @version:1.0.0
- * @description: Item
+ * @description: ColorFactory
  */
-public interface Item {
-     String name();
-     Packing packing();
-     float price();
+public class ColorFactory implements IColorFactory {
+    @Override
+    public Color getColor(FactoryType color) {
+        if(color == null){
+            return null;
+        }
+        if(color.equals(FactoryType.RED)){
+            return new Red();
+        } else if(color.equals(FactoryType.GREEN)){
+            return new Green();
+        } else if(color.equals(FactoryType.BLUE)){
+            return new Blue();
+        }
+        return null;
+    }
+
 }

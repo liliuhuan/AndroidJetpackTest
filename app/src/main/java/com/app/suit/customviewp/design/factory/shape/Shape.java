@@ -1,4 +1,4 @@
-package com.app.suit.customviewp.design.factory;
+package com.app.suit.customviewp.design.factory.shape;
 
 /************************************************************
  *

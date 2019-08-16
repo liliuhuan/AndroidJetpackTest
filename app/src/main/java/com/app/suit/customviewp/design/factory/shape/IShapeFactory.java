@@ -1,4 +1,7 @@
-package com.app.suit.customviewp.design.builder;
+package com.app.suit.customviewp.design.factory.shape;
+
+import com.app.suit.customviewp.design.factory.FactoryType;
+import com.app.suit.customviewp.design.factory.IFactory;
 
 /************************************************************
  *
@@ -24,10 +27,10 @@ package com.app.suit.customviewp.design.builder;
  *
  *************************************************************
  * @author: 李刘欢
- * @date：2019/8/5 14:50
+ * @date：2019/8/16 14:16
  * @version:1.0.0
- * @description: Packing  包装
+ * @description: IShapeFactory
  */
-public interface Packing {
-    String pack();
+public interface IShapeFactory extends IFactory {
+    Shape getShape(FactoryType shape);
 }

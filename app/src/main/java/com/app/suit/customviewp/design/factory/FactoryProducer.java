@@ -1,5 +1,8 @@
 package com.app.suit.customviewp.design.factory;
 
+import com.app.suit.customviewp.design.factory.color.ColorFactory;
+import com.app.suit.customviewp.design.factory.shape.ShapeFactory;
+
 /************************************************************
  *
  *
@@ -29,7 +32,7 @@ package com.app.suit.customviewp.design.factory;
  * @description: FactoryProducer
  */
  class FactoryProducer {
-     static AbstractFactory getFactory(String choice){
+     static IFactory getFactory(String choice){
         if(choice.equalsIgnoreCase("SHAPE")){
             return new ShapeFactory();
         } else if(choice.equalsIgnoreCase("COLOR")){

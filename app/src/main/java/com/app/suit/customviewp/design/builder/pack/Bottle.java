@@ -1,4 +1,6 @@
-package com.app.suit.customviewp.design.factory;
+package com.app.suit.customviewp.design.builder.pack;
+
+import com.app.suit.customviewp.design.builder.pack.Packing;
 
 /************************************************************
  *
@@ -24,11 +26,13 @@ package com.app.suit.customviewp.design.factory;
  *
  *************************************************************
  * @author: 李刘欢
- * @date：2019/8/5 14:32
+ * @date：2019/8/5 14:52
  * @version:1.0.0
- * @description: AbstractFactory
+ * @description: Bottle  瓶子
  */
-public abstract class AbstractFactory {
-    public abstract Color getColor(FactoryType color);
-    public abstract Shape getShape(FactoryType shape) ;
+public class Bottle implements Packing {
+    @Override
+    public String pack() {
+        return "Bottle";
+    }
 }

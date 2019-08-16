@@ -1,4 +1,4 @@
-package com.app.suit.customviewp.design.builder;
+package com.app.suit.customviewp.design.factory.shape;
 
 /************************************************************
  *
@@ -24,13 +24,13 @@ package com.app.suit.customviewp.design.builder;
  *
  *************************************************************
  * @author: 李刘欢
- * @date：2019/8/5 14:52
+ * @date：2019/8/5 14:22
  * @version:1.0.0
- * @description: Bottle  瓶子
+ * @description: Rectangle
  */
-public class Bottle implements Packing {
+public class Rectangle implements Shape {
     @Override
-    public String pack() {
-        return "Bottle";
+    public void draw() {
+        System.out.println("Inside Rectangle::draw() method.");
     }
 }

@@ -1,4 +1,4 @@
-package com.app.suit.customviewp.design.factory;
+package com.app.suit.customviewp.design.factory.color;
 
 /************************************************************
  *
@@ -24,28 +24,10 @@ package com.app.suit.customviewp.design.factory;
  *
  *************************************************************
  * @author: 李刘欢
- * @date：2019/8/5 14:25
+ * @date：2019/8/5 14:29
  * @version:1.0.0
- * @description: ShapeFactory
+ * @description: Color
  */
-public class ShapeFactory extends AbstractFactory{
-    @Override
-    public Color getColor(FactoryType color) {
-        return null;
-    }
-
-    @Override
-    public Shape getShape(FactoryType shapeType){
-        if(shapeType == null){
-            return null;
-        }
-        if(shapeType.equals(FactoryType.CIRCLE)){
-            return new Circle();
-        } else if(shapeType.equals(FactoryType.RECTANGLE)){
-            return new Rectangle();
-        } else if(shapeType.equals(FactoryType.SQUARE)){
-            return new Square();
-        }
-        return null;
-    }
+public interface Color {
+    void fill();
 }

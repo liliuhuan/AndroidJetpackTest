@@ -29,7 +29,7 @@ package com.app.suit.customviewp.design.observer;
  * @description: BinaryObserver
  */
 public class BinaryObserver extends Observer {
-    public BinaryObserver(Subject subject) {
+     BinaryObserver(Subject subject) {
         this.subject = subject;
         this.subject.attach(this);
     }

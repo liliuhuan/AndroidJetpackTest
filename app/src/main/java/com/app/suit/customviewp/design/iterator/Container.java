@@ -28,6 +28,6 @@ package com.app.suit.customviewp.design.iterator;
  * @version:1.0.0
  * @description: Container
  */
-public interface Container {
-    Iterator getIterator();
+public interface Container<T> {
+    Iterator<T> getIterator();
 }

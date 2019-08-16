@@ -1,4 +1,6 @@
-package com.app.suit.customviewp.design.factory;
+package com.app.suit.customviewp.design.builder.item;
+
+import com.app.suit.customviewp.design.builder.pack.Packing;
 
 /************************************************************
  *
@@ -24,13 +26,12 @@ package com.app.suit.customviewp.design.factory;
  *
  *************************************************************
  * @author: 李刘欢
- * @date：2019/8/5 14:30
+ * @date：2019/8/5 14:50
  * @version:1.0.0
- * @description: Green
+ * @description: Item
  */
-public class Green implements Color {
-    @Override
-    public void fill() {
-        System.out.println("Inside Green::fill() method.");
-    }
+public interface Item {
+     String name();
+     Packing packing();
+     float price();
 }

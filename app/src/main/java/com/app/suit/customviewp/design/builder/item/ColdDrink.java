@@ -1,4 +1,8 @@
-package com.app.suit.customviewp.design.factory;
+package com.app.suit.customviewp.design.builder.item;
+
+
+import com.app.suit.customviewp.design.builder.pack.Bottle;
+import com.app.suit.customviewp.design.builder.pack.Packing;
 
 /************************************************************
  *
@@ -24,13 +28,13 @@ package com.app.suit.customviewp.design.factory;
  *
  *************************************************************
  * @author: 李刘欢
- * @date：2019/8/5 14:22
+ * @date：2019/8/5 14:53
  * @version:1.0.0
- * @description: Rectangle
+ * @description: ColdDrink
  */
-public class Rectangle implements Shape {
+public abstract class ColdDrink implements Item {
     @Override
-    public void draw() {
-        System.out.println("Inside Rectangle::draw() method.");
+    public Packing packing() {
+        return new Bottle();
     }
 }

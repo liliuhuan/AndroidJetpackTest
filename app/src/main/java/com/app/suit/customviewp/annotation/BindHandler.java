@@ -36,9 +36,9 @@ import java.lang.reflect.Method;
  * @version:1.0.0
  * @description: BindHandler
  */
-public class BindHandler {
+ class BindHandler {
 
-    public static void handerBind(Activity activity) {
+     static void handleBind(Activity activity) {
         Class cls = activity.getClass();
         handleSetContentView(activity);
         handleFindView(cls.getDeclaredFields(), activity);
@@ -54,6 +54,7 @@ public class BindHandler {
         Class<? extends Activity> cls = activity.getClass();
         if (cls.isAnnotationPresent(Bind.class)) {
             Bind bind = cls.getAnnotation(Bind.class);
+            assert bind != null;
             int layout = bind.value();
             if (layout != 0)
                 activity.setContentView(layout);

@@ -1,4 +1,7 @@
-package com.app.suit.customviewp.design.factory;
+package com.app.suit.customviewp.design.builder.item;
+
+import com.app.suit.customviewp.design.builder.pack.Packing;
+import com.app.suit.customviewp.design.builder.pack.Wrapper;
 
 /************************************************************
  *
@@ -24,28 +27,13 @@ package com.app.suit.customviewp.design.factory;
  *
  *************************************************************
  * @author: 李刘欢
- * @date：2019/8/5 14:33
+ * @date：2019/8/5 14:52
  * @version:1.0.0
- * @description: ColorFactory
+ * @description: Burger  汉堡包
  */
-public class ColorFactory extends AbstractFactory {
+public abstract class Burger implements Item {
     @Override
-    public Color getColor(FactoryType color) {
-        if(color == null){
-            return null;
-        }
-        if(color.equals(FactoryType.RED)){
-            return new Red();
-        } else if(color.equals(FactoryType.GREEN)){
-            return new Green();
-        } else if(color.equals(FactoryType.BLUE)){
-            return new Blue();
-        }
-        return null;
-    }
-
-    @Override
-    public Shape getShape(FactoryType shape) {
-        return null;
+    public Packing packing() {
+        return new Wrapper();
     }
 }
