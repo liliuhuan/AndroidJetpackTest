@@ -7,6 +7,7 @@ import android.util.Log;
 
 import androidx.databinding.DataBindingUtil;
 
+import com.app.suit.customviewp.aidl.ClientActivity;
 import com.app.suit.customviewp.annotation.BindActivity;
 import com.app.suit.customviewp.databinding.ActivityMainBinding;
 import com.app.suit.customviewp.databinding.DataBindActivity;
@@ -55,6 +56,9 @@ public class MainActivity extends AppCompatActivity {
 
     public void toBind() {
         toActivity(BindActivity.class);
+    }
+    public void toBinderService() {
+        toActivity(ClientActivity.class);
     }
 
     private void toActivity(Class<?> A) {

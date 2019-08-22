@@ -9,22 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".annotation.BindActivity"></activity>
+        <activity android:name=".aidl.ClientActivity"></activity>
+        <activity android:name=".annotation.BindActivity" />
         <activity android:name=".room.RoomActivity" />
         <activity android:name=".viewmodel.ViewModelActivity" />
-
-        <service
-            android:name=".service.MyService"
-            android:enabled="true"
-            android:exported="false"
-            android:process=":remote">
-            <intent-filter>
-
-                <!-- 为Service组件的intent-filter配置action -->
-                <action android:name="com.app.suit.customviewp.MyService" />
-            </intent-filter>
-        </service>
-
         <activity android:name=".livedata.LiveDataActivity" />
         <activity android:name=".lifecycles.LifecyclesActivity" />
         <activity android:name=".databinding.DataBindActivity" />
@@ -36,6 +24,29 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service
+            android:name=".aidl.RemoteService"
+            android:enabled="true"
+            android:exported="true"
+            android:process=":remote">
+            <intent-filter>
+
+                <!-- 为Service组件的intent-filter配置action -->
+                <action android:name="com.app.suit.customviewp.aidl.RemoteService" />
+            </intent-filter>
+        </service>
+        <service
+            android:name=".service.MyService"
+            android:enabled="true"
+            android:exported="false"
+           >
+            <intent-filter>
+
+                <!-- 为Service组件的intent-filter配置action -->
+                <action android:name="com.app.suit.customviewp.MyService" />
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>

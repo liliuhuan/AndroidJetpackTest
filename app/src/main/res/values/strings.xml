@@ -11,4 +11,12 @@
     <string name="room">to-Room</string>
     <string name="service">to-Service</string>
     <string name="bind">to-Bind</string>
+    <string name="remote_service_unattached">远程服务未关联</string>
+    <string name="remote_service_connected">远程服务连接</string>
+    <string name="remote_service_disconnected">远程服务断开连接</string>
+    <string name="binding">绑定服务</string>
+    <string name="unbinding">解绑服务</string>
+    <string name="kill_success">杀死服务成功</string>
+    <string name="kill_failure">杀死服务失败</string>
+    <string name="binder">To-BindRemoteService</string>
 </resources>
